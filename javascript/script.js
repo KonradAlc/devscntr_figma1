@@ -6,7 +6,7 @@ const searchBar = document.querySelector('.navbar__search')
 
 
 const isSticky = () => {
-    if (window.scrollY > 80) {
+    if (window.scrollY >= 60) {
         navbar.classList.add('sticky')
     }
     else {
@@ -46,3 +46,7 @@ document.addEventListener('scroll', isSticky)
 document.addEventListener('click', dropdownMenu)
 navbarMenuToggle.addEventListener('click', mobileMenu)
 searchBarToggleBtn.addEventListener('click', searchBarToggle)
+
+document.addEventListener('click', e => {
+    console.log(e)
+})

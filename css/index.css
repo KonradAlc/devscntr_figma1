@@ -1,9 +1,11 @@
 :root {
     --font-family: 'Inter', sans-serif;
-    --wrap-width: 1200px;
+    --wrap-width: 100%;
 
     --color-bg: #ffffff;
     --color-accent: #217BF4;
+    --color-accent-hover: #106AE3;
+    --color-accent-light: #D4E7FE;
     --color-accent-text: #ffffff;
 
     --color-h1: #0A093D;

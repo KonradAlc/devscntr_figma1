@@ -4,6 +4,356 @@
     box-sizing: border-box;
 }
 
+:root {
+    font-size: 16px;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-family);
+    scroll-behavior: smooth;
+}
+
+.main {
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+}
+
+.header {
+    width: 100%;
+    height: 100vh;
+    margin-top: -7rem;
+    padding-top: 7rem;
+    background: linear-gradient(311.76deg, #D4E7FE -15.24%, #FFFFFF 78.85%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.navbar {
+    z-index: 10;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 2rem;
+    height: 7rem;
+    border-bottom: 1px solid #217BF420;
+    background: transparent;
+    transition: .25s;
+}
+
+.navbar.sticky {
+    background: #ffffff;
+    height: 5rem;
+    border-color: transparent;
+    -webkit-box-shadow: 0px 0px 20px -10px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 20px -10px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 20px -18px rgba(66, 68, 90, 1);
+}
+
+.navbar--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: var(--wrap-width);
+}
+
+.navbar--space {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navbar__logo {
+    
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar__menu > ul {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navbar__menu > ul > li {
+    position: relative;
+}
+
+.navbar__menu a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar__menu a.active {
+    color: var(--color-text-dark);
+    font-weight: 600;
+}
+
+.navbar__menu img {
+    transition: .25s;
+}
+
+.navbar__menu img.active {
+    transform: rotate(180deg);
+}
+
+.navbar__menu__dropdown {
+    position: absolute;
+    left: 0;
+    top: calc(100% + .5rem);
+    min-width: calc(100% + 2rem);
+    margin-left: -1rem;
+    background: #f5f5f5;
+    list-style: none;
+    border-radius: .5rem;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-1rem);
+    transition: .25s ease-in-out;
+    padding: .5rem;
+}
+
+.navbar__menu__dropdown > li {
+    border-radius: .5rem;
+}
+
+.navbar__menu__dropdown > li:hover {
+    background-color: #eaeaea;
+}
+
+.navbar__menu__dropdown > li > a {
+    padding: .5rem;
+}
+
+.navbar__menu__dropdown.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.navbar__search {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    margin-right: -1rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-width: 0;
+    transition: width .25s;
+}
+
+.navbar__search__icon img {
+    margin-top: .2rem;
+    height: 1rem;
+    cursor: pointer;
+}
+
+.navbar__search.active {
+    width: 14rem;
+    height: auto;
+    border-radius: 0;
+    border-bottom: 1px solid #ccc;
+    border-width: 1px;
+    margin-right: 0;
+}
+
+.navbar__search__input {
+    display: none;
+    width: 0;
+}
+
+.navbar__search.active > .navbar__search__input {
+    width: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.navbar__search__input input {
+    padding: .5rem 1rem;
+    border: none;
+    background: transparent;
+}
+
+.navbar__search__input input:focus {
+    outline: none;
+}
+
+.navbar__menu__btn {
+    display: none;
+}
+
+.navbar__btn {
+    
+}
+
+.navbar__menu__toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.navbar__menu__toggle .open {
+    display: block;
+}
+
+.navbar__menu__toggle .close {
+    display: none;
+}
+
+.navbar__menu__toggle.active .open {
+    display: none;
+}
+
+.navbar__menu__toggle.active .close {
+    display: block;
+}
+
+.header__hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    width: var(--wrap-width);
+}
+
+.header__hero--space * {
+    margin: 1rem 0;
+}
+
+.header__hero__headline > h1 {
+    font-size: 3.5rem;
+}
+
+.header__hero__headline > p {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    color: var(--color-text);
+}
+
+.header__hero__buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    :root {
+        font-size: 15px;
+    }
+
+    .navbar {
+        height: 5rem;
+    }
+
+    .navbar__menu {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        opacity: 0;
+        pointer-events: none;
+        transition: .2s ease-in-out;
+        transform: translateX(-50%);
+        min-height: calc(100vh - 5rem);
+        margin-top: 4rem;
+        width: 100%;
+        padding: 2rem 0;
+        background: #ffffff;
+    }
+
+    .navbar__menu.active {
+        pointer-events: auto;
+        margin-top: 5rem;
+        font-size: 1.2rem;
+        opacity: 1;
+    }
+
+    .navbar__menu > ul {
+        flex-direction: column;
+    }
+
+    .navbar__menu__dropdown.active {
+        position: static;
+        margin-top: 1rem;
+    }
+
+    .navbar__menu__toggle {
+        display: block;
+    }
+
+    .navbar__menu__btn {
+        display: block;
+    }
+
+    .navbar__btn {
+        display: none;
+    }
+
+    .header__hero__img img {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 1140px) {
+
+    :root {
+        font-size: 15px;
+    }
+
+    .navbar__search {
+        display: none;
+    }
+
+    .header {
+        height: auto;
+        padding-bottom: 4rem;
+    }
+
+    .header__hero {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 7rem;
+        gap: 0;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+
+    :root {
+        --wrap-width: 100%;
+    }
+
+    html {
+        font-size: 16px;
+    }
+    
 }

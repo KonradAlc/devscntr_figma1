@@ -1,0 +1,29 @@
+.btn {
+    padding: 1.3rem 2.5rem;
+    border-radius: .8rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn--small {
+    padding: .8rem 2rem;
+}
+
+.btn--primary {
+    background-color: var(--color-accent);
+    color: var(--color-accent-text);
+    box-shadow: 0px 7px 22px -6px rgba(33, 123, 244, 0.34);
+}
+
+.btn--secondary {
+    background-color: #D4E7FE;
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+.btn--outline {
+    background: transparent;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+}

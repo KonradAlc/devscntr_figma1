@@ -1,0 +1,12 @@
+:root {
+    --font-family: 'Inter', sans-serif;
+    --wrap-width: 1200px;
+
+    --color-bg: #ffffff;
+    --color-accent: #217BF4;
+    --color-accent-text: #ffffff;
+
+    --color-h1: #0A093D;
+    --color-text: #656464;
+    --color-text-dark: #2B2B39;
+}

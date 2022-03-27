@@ -46,7 +46,3 @@ document.addEventListener('scroll', isSticky)
 document.addEventListener('click', dropdownMenu)
 navbarMenuToggle.addEventListener('click', mobileMenu)
 searchBarToggleBtn.addEventListener('click', searchBarToggle)
-
-document.addEventListener('click', e => {
-    console.log(e)
-})

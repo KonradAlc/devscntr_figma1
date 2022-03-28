@@ -1,4 +1,5 @@
 .btn {
+    font-family: var(--font-family);
     padding: 1.3rem 2.5rem;
     border-radius: .8rem;
     border: none;
@@ -40,4 +41,12 @@
 
 .btn--outline:hover {
     background: var(--color-accent-light);
+}
+
+.text {
+    color: var(--color-text);
+}
+
+.text--accent {
+    color: var(--color-accent);
 }

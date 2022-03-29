@@ -43,6 +43,18 @@
     background: var(--color-accent-light);
 }
 
+.btn--appstore {
+    background: url(../assets/download_appstore.png);
+    width: 145px;
+    height: 52px;
+}
+
+.btn--playstore {
+    background: url(../assets/download_playstore.png);
+    width: 145px;
+    height: 52px;
+}
+
 .text {
     color: var(--color-text);
 }

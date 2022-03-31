@@ -5,11 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+    <!-- Fontawesome CDN link -->
     <script src="https://kit.fontawesome.com/0bd60cc4ed.js" crossorigin="anonymous"></script>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/style.css">
@@ -325,6 +332,61 @@
                     <h1>Latest News</h1>
                 </div>
             </div>
+            <div class="section__col">
+                <img class="news__decorator" src="assets/Union.png">
+                <img class="news__decorator" src="assets/Union.png">
+                <div class="carousel swiper mySwiper">
+                    <div class="carousel__content swiper-wrapper">
+
+                        <div class="carousel__card swiper-slide">
+                            <div class="carousel__card__img">
+                                <a href="#"><img src="assets/news_1.png"></a>
+                            </div>
+                            <div class="carousel__card__content">
+                                <div class="carousel__card__content__decorator">
+                                    <img src="assets/line.png" alt="--">
+                                </div>
+                                <div class="carousel__card__content__text">
+                                    <h4>It Does Not Matter Hows Slowly go as Long</h4>
+                                    <a href="#">Continue Reading -></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel__card swiper-slide">
+                            <div class="carousel__card__img">
+                                <a href="#"><img src="assets/news_2.png"></a>
+                            </div>
+                            <div class="carousel__card__content">
+                                <div class="carousel__card__content__decorator">
+                                    <img src="assets/line.png" alt="--">
+                                </div>
+                                <div class="carousel__card__content__text">
+                                    <h4>Netbook Network Added New Photo Filter</h4>
+                                    <a href="#">Continue Reading -></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel__card swiper-slide">
+                            <div class="carousel__card__img">
+                                <a href="#"><img src="assets/news_3.png"></a>
+                            </div>
+                            <div class="carousel__card__content">
+                                <div class="carousel__card__content__decorator">
+                                    <img src="assets/line.png" alt="--">
+                                </div>
+                                <div class="carousel__card__content__text">
+                                    <h4>We Optimised Netbooks Better Navigation</h4>
+                                    <a href="#">Continue Reading -></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
         </div>
 
         <div class="footer">
@@ -385,6 +447,45 @@
 
     </div>
 
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        let slides = 3
+
+        const sliderResponsive = () => {
+            if (window.innerWidth >= 1140) {
+                slides = 3
+            }
+            else if (window.innerWidth >= 768) {
+                slides = 2
+            }
+            else {
+                slides = 1
+            }
+
+            let swiper = new Swiper(".mySwiper", {
+                slidesPerView: slides,
+                spaceBetween: 30,
+                slidesPerGroup: slides,
+                loop: true,
+                loopFillGroupWithBlank: false,
+                navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+                },
+            });
+        }
+
+        sliderResponsive()
+        window.addEventListener('resize', sliderResponsive)
+
+        
+    </script>
+
+    <!-- JS -->
     <script src="javascript/script.js"></script>
+    
 </body>
 </html>
